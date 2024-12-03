@@ -237,7 +237,7 @@
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/books/:id",
+			"name": "delete book",
 			"id": "744e4f3b-f735-4789-9b20-7976470d14ca",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
