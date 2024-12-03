@@ -237,7 +237,7 @@
 			"response": []
 		},
 		{
-			"name": "{{baseUrl}}/books/:id",
+			"name": "delete book",
 			"id": "744e4f3b-f735-4789-9b20-7976470d14ca",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -270,7 +270,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "97631112-68ab-4cfb-8385-5278e92413e7",
+				"id": "0a96a368-6a10-4c12-af1f-b32d8fa8b1fb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -281,7 +281,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4aea8179-07d4-47cf-9e97-bf9591c32000",
+				"id": "30ac8444-4a6f-4495-a9a4-cfd25e0f95e1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
