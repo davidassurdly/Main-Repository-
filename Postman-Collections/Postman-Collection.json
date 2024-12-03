@@ -105,6 +105,27 @@
 		},
 		{
 			"name": "books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "50540728-51b2-4124-a87b-48864ba23c49",
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "4646e232-6052-41b6-9a0e-e8a64643b19f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -112,6 +133,15 @@
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{baseUrl}}/books",
 					"host": [
@@ -189,6 +219,10 @@
 							"});",
 							"pm.test(\"Response time is less than 200ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
 							"});"
 						],
 						"type": "text/javascript",
