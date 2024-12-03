@@ -10,6 +10,21 @@
 			"item": [
 				{
 					"name": "addbook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e8e9428b-5971-4131-836d-b31282175e26",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "eedecac4-7fd7-4a91-a658-2113305cceaf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
