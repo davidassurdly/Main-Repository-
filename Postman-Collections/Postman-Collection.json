@@ -32,6 +32,27 @@
 				},
 				{
 					"name": "books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "727610a5-c6a8-4574-89bd-67afeff9bcdb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Successful GET request\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "5d1a5e97-f9ac-4ab0-a3b5-00145c8a679d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -105,6 +126,27 @@
 		},
 		{
 			"name": "books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "50540728-51b2-4124-a87b-48864ba23c49",
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "4646e232-6052-41b6-9a0e-e8a64643b19f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -112,6 +154,15 @@
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "{{baseUrl}}/books",
 					"host": [
@@ -178,6 +229,28 @@
 		},
 		{
 			"name": "addbook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e3d2c81-4f5b-447d-acdd-cec33f2d6354",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "b973d45c-33b0-465f-ba92-9a2b9b5b72b1",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -200,6 +273,21 @@
 		},
 		{
 			"name": "updatebook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef26e810-d934-4a95-a4b1-a7c7c4b1814f",
+						"exec": [
+							"pm.test(\"Response time is less than 4000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "90f99d0a-77cc-4cc3-b059-66773fdea61a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -227,7 +315,6 @@
 					],
 					"variable": [
 						{
-							"id": "c31aee39-f02d-4688-bdb2-98c31e2c36cb",
 							"key": "id",
 							"value": "cwSjBa_thjnW3cr"
 						}
@@ -238,6 +325,24 @@
 		},
 		{
 			"name": "delete book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb06335b-368d-46a9-ab90-b6fcdf0c5a7d",
+						"exec": [
+							"pm.test(\"Response time is less than 4000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);",
+							"});",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "744e4f3b-f735-4789-9b20-7976470d14ca",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -256,7 +361,6 @@
 					],
 					"variable": [
 						{
-							"id": "dcd00cab-42b5-48f4-8494-092af0f0bebf",
 							"key": "id",
 							"value": "{{id}}"
 						}
