@@ -32,6 +32,25 @@
 				},
 				{
 					"name": "books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "727610a5-c6a8-4574-89bd-67afeff9bcdb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Successful GET request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "5d1a5e97-f9ac-4ab0-a3b5-00145c8a679d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
