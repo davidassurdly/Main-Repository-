@@ -43,8 +43,10 @@
 									"});",
 									"",
 									"pm.test(\"Successful GET request\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
-									"});"
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
