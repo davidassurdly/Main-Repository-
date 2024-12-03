@@ -178,6 +178,24 @@
 		},
 		{
 			"name": "addbook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e3d2c81-4f5b-447d-acdd-cec33f2d6354",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "b973d45c-33b0-465f-ba92-9a2b9b5b72b1",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -200,6 +218,21 @@
 		},
 		{
 			"name": "updatebook",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef26e810-d934-4a95-a4b1-a7c7c4b1814f",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "90f99d0a-77cc-4cc3-b059-66773fdea61a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -227,7 +260,6 @@
 					],
 					"variable": [
 						{
-							"id": "c31aee39-f02d-4688-bdb2-98c31e2c36cb",
 							"key": "id",
 							"value": "cwSjBa_thjnW3cr"
 						}
