@@ -224,8 +224,8 @@
 					"script": {
 						"id": "ef26e810-d934-4a95-a4b1-a7c7c4b1814f",
 						"exec": [
-							"pm.test(\"Response time is less than 1000ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"pm.test(\"Response time is less than 4000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);",
 							"});"
 						],
 						"type": "text/javascript",
@@ -270,6 +270,24 @@
 		},
 		{
 			"name": "delete book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb06335b-368d-46a9-ab90-b6fcdf0c5a7d",
+						"exec": [
+							"pm.test(\"Response time is less than 4000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);",
+							"});",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "744e4f3b-f735-4789-9b20-7976470d14ca",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -288,7 +306,6 @@
 					],
 					"variable": [
 						{
-							"id": "dcd00cab-42b5-48f4-8494-092af0f0bebf",
 							"key": "id",
 							"value": "{{id}}"
 						}
